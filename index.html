@@ -26,12 +26,12 @@
     <style>
         .principal
         {
-            position: relative;
+            position: absolute;
             width: 200px;
             height: 200px;
-            background-color: lightgrey;
-            top:100px;
-            left: 0px;
+            background-color: rgb(140, 24, 24);
+            top: 400px;
+            left: 1350px;
         }
         .central
         {
@@ -58,7 +58,7 @@
             height: 50px;
             border-radius: 25px;
             background-color: red;
-            top:15px;
+            top: 75px;
             left:75px;
             font-size: 20px;
             display: flex;
@@ -76,7 +76,7 @@
             border-radius: 25px;
             background-color: green;
             top:75px;
-            right:15px;
+            right: 75px;
             font-size: 20px;
             display: flex;
             flex-direction: row;
@@ -91,7 +91,7 @@
             height: 50px;
             border-radius: 25px;
             background-color: pink;
-            bottom:15px;
+            bottom:75px;
             left:75px;
             font-size: 20px;
             display: flex;
@@ -125,8 +125,8 @@
             animation: recolher_op2 1s forwards;
         }
         @keyframes recolher_op2 {
-                0%{top:75px;right:15px;}
-                100%{top:75px;right:75px;}      
+                0%{top:75px;left:15px;}
+                100%{top:75px;left:75px;}      
         }
         
         .mostrar_op2
@@ -134,8 +134,8 @@
             animation: abrir_op2 1s forwards;
         }
         @keyframes abrir_op2 {
-            0%{right:75px;top:75px;} 
-            100%{right:15px;top:75px;}    
+            0%{left: 15px;px;top:75px;} 
+            100%{left: 75px;px;top:200px;}    
         }
 
         .anima_op3
@@ -178,9 +178,17 @@
             <center>
                 <img src="logo.png" alt="">
             </center> 
-     </header>
-           
         </header>
+           
+        
+        <div class="principal">
+            <div onclick="ExecutarMenu();" class="central">  </div>
+            <a href="login.html"><div class="op1" id="op1" > A </div></a>
+            <a href="car.html"><div class="op2" id="op2"> B </div></a>
+            <a href="faleconosco.html"><div class="op3" id="op3"> C </div></a>
+        </div>
+    
+   
         <div class="Meio">
             <h1>CONHEÇA A MELHOR LOJA   
             DE BRINQUEDOS DO BRASIL!</h1>
@@ -193,14 +201,6 @@
                 </div>
             </div>
         </div>
- 
-    
-        <div class="principal">
-            <div onclick="ExecutarMenu();" class="central">  </div>
-            <div class="op1" id="op1"> A </div>
-            <div class="op2" id="op2"> B </div>
-            <div class="op3" id="op3"> C </div>
-        </div>
     
     </body>
 
@@ -211,18 +211,18 @@
             cliques = !cliques; //inverte o valor da variavel//
             if(cliques==true) //sendo a variavel verdadeira, ele inicia a animação//
             {
-                op1.classList.add("anima_op1");
-                op2.classList.add("anima_op2");
-                op3.classList.add("anima_op3");
+                op1.classList.add("mostrar_op1");
+                op2.classList.add("mostrar_op2");
+                op3.classList.add("mostar_op3");
     
                 op1.classList.remove("mostrar_op1");//remove a classe de animação//
             }
             if(cliques==false){ // se a animação for falsa, ele verifica e inicia a animação//
-                op1.classList.add("mostrar_op1");
-                op2.classList.add("mostrar_op2");
-                op3.classList.add("mostrar_op3");
+                op1.classList.add("anima_op1");
+                op2.classList.add("anima_op2");
+                op3.classList.add("anima_op3");
     
-                op1.classList.remove("anima_op1");//remove a classe de animação//
+              
                
             }
         }
